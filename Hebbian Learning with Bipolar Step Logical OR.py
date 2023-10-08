@@ -7,11 +7,21 @@ def Bipolar_Step(x):
 
 # Training
 x = np.array([[-1, -1, 1, 1],[-1, 1, -1, 1], [1, 1, 1, 1]])
-y = np.array([-1, 1, 1, 1])
-w = np.array([0, 0, 0])
+y = np.array([[-1, 1, 1, 1]])
+w = np.array([[0, 0, 0]])
 
 for i in range(x.shape[1]):
     sample = x[:, i]
     w[0] = w[0] + y[0][i] * sample
+    print(w)
+
+
+# Testing
+predicted = []
+for i in range(x.shape[1]):
+    sample = x[:,i]
+    y_ = np.dot(sample, w[0])
+    predicted.append(Bipolar_Step(y_))
+print(predicted)
 
 
