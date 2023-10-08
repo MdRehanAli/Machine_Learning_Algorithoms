@@ -25,3 +25,14 @@ for i in range(x.shape[1]):
 print(predicted)
 
 
+# Decision Boundary Calculation
+dx = []
+dy = []
+for i in range(-2, 4):
+    dx.append(i)
+    dy.append((-w[0][0]/w[0][1])*i + (-w[0][2]/w[0][1]))
+
+# Graph
+plt.scatter([-1, 1, 1], [1, -1, 1])
+plt.scatter(-1, -1,)
+plt.show()
